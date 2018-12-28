@@ -1,0 +1,156 @@
+package application_nav_drawer_2.com.nav_drawer_2;
+
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
+
+public class VideoQuiz_Activity extends AppCompatActivity {
+    private VideoQuiz_Question mEarth_Question = new VideoQuiz_Question();
+   
+    private VideoView mVideoView;
+    private TextView mScoreView;
+    private TextView mQuestionView;
+    private Button mChoiceView1;
+    private Button mChoiceView2;
+    private Button mChoiceView3;
+
+    private String mAnswer;
+    private int mScore = 0;
+    private int mQuestionNumber = 0;
+
+    private Integer mVideoNumber = 0;
+
+    Integer mQuestion_1[] = {
+            R.raw.vid1,
+            R.raw.vid2,
+            R.raw.vid3
+           
+    };
+  
+    
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.earth_activity);
+
+        updateQuestion();
+
+        mVideoView = findViewById(R.id.video_earth);
+        mScoreView = findViewById(R.id.score_earth);
+        mQuestionView = findViewById(R.id.question_text_earth);
+        mChoiceView1 = findViewById(R.id.choice1_earth);
+        mChoiceView2 = findViewById(R.id.choice2_earth);
+        mChoiceView3 = findViewById(R.id.choice3_earth);
+
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.vid1;
+        mVideoView.setVideoPath(path);
+        mVideoView.start();
+        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
+
+
+        mChoiceView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (mChoiceView1.getText() == mAnswer) {
+                    mScore = mScore = 1;
+
+                    Toast.makeText(VideoQuiz_Activity.this, "correct", Toast.LENGTH_SHORT).show();
+
+                           
+                    updateScore(mScore);
+                    updateQuestion();
+                   
+
+
+                } else {
+                    Toast.makeText(VideoQuiz_Activity.this, "wrong", Toast.LENGTH_SHORT).show();
+
+
+                    updateScore(mScore);
+                    updateQuestion();
+                }
+               
+
+            }
+
+        });
+
+        mChoiceView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (mChoiceView2.getText() == mAnswer) {
+                    mScore = mScore = 1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                    Toast.makeText(VideoQuiz_Activity.this, "correct", Toast.LENGTH_SHORT).show();
+                    updateScore(mScore);
+                    updateQuestion();
+                    ///mScoreView.setText("correct");
+
+                } else {
+                    Toast.makeText(VideoQuiz_Activity.this, "wrong", Toast.LENGTH_SHORT).show();
+                    updateScore(mScore);
+                    updateQuestion();
+                }
+                
+
+             
+        mChoiceView3.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+
+                                                if (mChoiceView3.getText() == mAnswer) {
+                                                    mScore = mScore = 1;
+
+
+                                                    Toast.makeText(VideoQuiz_Activity.this, "correct", Toast.LENGTH_SHORT).show();
+                                                    updateScore(mScore);
+                                                    updateQuestion();
+                                                    
+
+                                                } else {
+                                                    Toast.makeText(VideoQuiz_Activity.this, "wrong", Toast.LENGTH_SHORT).show();
+                                                    updateScore(mScore);
+                                                    updateQuestion();
+                                                }
+                                               
+                                            }
+                                        });
+
+
+/////////////// where I can't figure out
+    private void updateQuestion() {
+        mQuestionView.setText(mEarth_Question.getQuestion(mQuestionNumber));
+        mChoiceView1.setText(mEarth_Question.getChoice1(mQuestionNumber));
+        mChoiceView2.setText(mEarth_Question.getChoice2(mQuestionNumber));
+        mChoiceView3.setText(mEarth_Question.getChoice3(mQuestionNumber));
+
+        mAnswer = mEarth_Question.getCorrectAnswer(mQuestionNumber);
+        mQuestionNumber++;
+    }
+
+
+   
+    private void updateScore(int point) {
+        mScoreView.setText("" + mScore + " /10");
+    }
+
+
+}
+
+
