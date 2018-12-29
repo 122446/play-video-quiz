@@ -1,3 +1,9 @@
+///////////////////
+/*I am trying to create a quiz where it display videos one by one for users to choose correct choice that
+they think it matched the video. And  that the the next video will play once the user has clicked on a choice 
+( In the quiz there will be altogether 3 sections with 10 videos for each section)*/
+
+
 package application_video_quiz.com.videoquiz;
 
 import android.content.Intent;
