@@ -1,3 +1,8 @@
+/////////////////////////////////
+/*Firstly, I tried by replacing String mQuestion Array with Integer mVideo Array but it doesn't work. 
+I dont know how to connect the updateQuestion method to it.*/
+
+
 package application_video_quiz.com.videoquiz;
 
 public class Video_Library {
