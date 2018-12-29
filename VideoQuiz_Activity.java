@@ -119,7 +119,6 @@ public class MainActivity_VideoQuiz extends AppCompatActivity {
                         //End of Button Listener for Button3
 
 
-
                 }
 ///////////this is where i can't figure out what to use to make it goes to the next video
 
