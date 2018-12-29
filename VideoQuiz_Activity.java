@@ -120,6 +120,7 @@ public class MainActivity_VideoQuiz extends AppCompatActivity {
 
 
                 }
+        
 ///////////this is where i can't figure out what to use to make it goes to the next video
 
                 private void updateQuestion(){
