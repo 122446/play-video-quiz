@@ -1,0 +1,48 @@
+package application_video_quiz.com.videoquiz;
+
+public class Video_Library {
+
+private Video_Library Q_1 = new Video_Library() {
+        Integer Vid_1 = R.raw.vid1;
+        String[] Cho_1 = {"Roots", "Stem", "Flower"};
+        String CorrectAnswers = "Roots";
+
+    };
+    public Video_Library Q_2 = new Video_Library() {
+        Integer Vid_1 = R.raw.vid2;
+        String[] Cho_1 = {"Fruit", "Leaves", "Seeds"};
+        String CorrectAnswers = "Leaves";
+
+    };
+
+    public Video_Library getQuestion(int a) {
+        Video_Library mQuestion = [a];
+    };
+
+    public String getQuestion(int a) {
+        String cho_ = C[a];
+        return question;
+    }
+
+
+    public String getChoice1(int a) {
+        String choice0 = mChoices[a][0];
+        return choice0;
+    }
+
+
+    public String getChoice2(int a) {
+        String choice1 = mChoices[a][1];
+        return choice1;
+    }
+
+    public String getChoice3(int a) {
+        String choice2 = mChoices[a][2];
+        return choice2;
+    }
+
+    public String getCorrectAnswer(int a) {
+        String answer = mCorrectAnswers[a];
+        return answer;
+    }
+}*/
