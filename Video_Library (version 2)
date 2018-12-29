@@ -1,3 +1,9 @@
+////////////
+/*Secondly, I tried to create objects that contain altogether a video , choices and a correct answer.
+Though, I am not sure if I am doing it right. Furthermore, I do not know what code shall I use in the Main Acivity to call for these
+objects and make it works.*/
+
+
 package application_video_quiz.com.videoquiz;
 
 public class Video_Library {
